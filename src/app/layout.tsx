@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Jura, Quicksand, Montserrat, Poppins } from "next/font/google";
 import "./globals.css";
+import { cn } from "@/lib/utils";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -40,7 +41,7 @@ export default function RootLayout({
   return (
     <html lang="pt-br">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${jura.variable} ${quicksand.variable} ${montserrat.variable}  antialiased`}
+        className={cn("min-h-screen bg-background font-sans antialiased", geistMono.variable, geistSans.variable, jura.variable, quicksand.variable, montserrat.variable)}
       >
         {children}
       </body>
